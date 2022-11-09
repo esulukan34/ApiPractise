@@ -1,5 +1,8 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
     private Integer id;
     private String description;
@@ -112,4 +115,5 @@ public class Account {
                 ", accountlogs='" + accountlogs + '\'' +
                 '}';
     }
+
 }

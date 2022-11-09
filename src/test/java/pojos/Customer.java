@@ -1,8 +1,49 @@
 package pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
 
-    private Integer id;
+
+    /*
+{
+    "id": 110452,
+    "firstName": "Jasmine",
+    "lastName": "Stehr",
+    "middleInitial": "V",
+    "email": "marni.zboncak@yahoo.com",
+    "mobilePhoneNumber": "463-609-2097",
+    "phoneNumber": "1-112-497-0270",
+    "zipCode": "16525",
+    "address": "14387 Al Ridge5343 Bert Burgs",
+    "city": "Waltermouth",
+    "ssn": "761-59-2911",
+    "createDate": "2021-11-28T21:00:00Z",
+    "zelleEnrolled": false,
+    "country": {
+        "id": 3,
+        "name": "USA",
+        "states": null
+    },
+    "state": "California",
+    "user": {
+        "id": 110016,
+        "login": "leopoldo.reinger",
+        "firstName": "Jasmine",
+        "lastName": "Stehr",
+        "email": "marni.zboncak@yahoo.com",
+        "activated": true,
+        "langKey": "en",
+        "imageUrl": null,
+        "resetDate": null
+    },
+    "accounts": []
+}
+ */
+
+
+    private int id;
     private String firstName;
     private String lastName;
     private String middleInitial;
@@ -12,42 +53,18 @@ public class Customer {
     private String zipCode;
     private String address;
     private String city;
-    private Integer ssn;
+    private String ssn;
     private String createDate;
-    private Boolean zelleEnrolled;
+    private boolean zelleEnrolled;
     private Country country;
     private String state;
     private User user;
-    private String accounts;
 
-    public Customer(Integer id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, Integer ssn, String createDate, Boolean zelleEnrolled, Country country, String state, User user, String accounts) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleInitial = middleInitial;
-        this.email = email;
-        this.mobilePhoneNumber = mobilePhoneNumber;
-        this.phoneNumber = phoneNumber;
-        this.zipCode = zipCode;
-        this.address = address;
-        this.city = city;
-        this.ssn = ssn;
-        this.createDate = createDate;
-        this.zelleEnrolled = zelleEnrolled;
-        this.country = country;
-        this.state = state;
-        this.user = user;
-        this.accounts = accounts;
-    }
-
-    public Customer() {
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -123,11 +140,11 @@ public class Customer {
         this.city = city;
     }
 
-    public Integer getSsn() {
+    public String getSsn() {
         return ssn;
     }
 
-    public void setSsn(Integer ssn) {
+    public void setSsn(String ssn) {
         this.ssn = ssn;
     }
 
@@ -139,11 +156,11 @@ public class Customer {
         this.createDate = createDate;
     }
 
-    public Boolean getZelleEnrolled() {
+    public boolean isZelleEnrolled() {
         return zelleEnrolled;
     }
 
-    public void setZelleEnrolled(Boolean zelleEnrolled) {
+    public void setZelleEnrolled(boolean zelleEnrolled) {
         this.zelleEnrolled = zelleEnrolled;
     }
 
@@ -171,12 +188,26 @@ public class Customer {
         this.user = user;
     }
 
-    public String getAccounts() {
-        return accounts;
+    public Customer() {
     }
 
-    public void setAccounts(String accounts) {
-        this.accounts = accounts;
+    public Customer(int id, String firstName, String lastName, String middleInitial, String email, String mobilePhoneNumber, String phoneNumber, String zipCode, String address, String city, String ssn, String createDate, boolean zelleEnrolled, Country country, String state, User user) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleInitial = middleInitial;
+        this.email = email;
+        this.mobilePhoneNumber = mobilePhoneNumber;
+        this.phoneNumber = phoneNumber;
+        this.zipCode = zipCode;
+        this.address = address;
+        this.city = city;
+        this.ssn = ssn;
+        this.createDate = createDate;
+        this.zelleEnrolled = zelleEnrolled;
+        this.country = country;
+        this.state = state;
+        this.user = user;
     }
 
     @Override
@@ -192,13 +223,12 @@ public class Customer {
                 ", zipCode='" + zipCode + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
-                ", ssn=" + ssn +
+                ", ssn='" + ssn + '\'' +
                 ", createDate='" + createDate + '\'' +
                 ", zelleEnrolled=" + zelleEnrolled +
                 ", country=" + country +
                 ", state='" + state + '\'' +
                 ", user=" + user +
-                ", accounts='" + accounts + '\'' +
                 '}';
     }
 }
